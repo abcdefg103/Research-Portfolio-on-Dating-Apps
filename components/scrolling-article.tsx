@@ -19,7 +19,7 @@ const sections: ArticleSection[] = [
     title: "Sensations of Loneliness",
     subtitle: "American Adults on Online Dating Platforms",
     content: "By Inhoo Chang | AP Seminar | February 2026",
-    backgroundImage: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=1920&q=80",
+    backgroundImage: "https://images.unsplash.com/photo-1492127042590-8094c493b510?q=80&w=2070",
     alignment: "center",
   },
   {
@@ -51,7 +51,7 @@ const sections: ArticleSection[] = [
     title: "The Silent Epidemic",
     subtitle: "Ghosting & Its Effects",
     content: "When individuals feel that a dating profile is not authentic, they lose trust, making a relationship less likely to succeed. This often leads to ghosting — suddenly cutting off communications without explanation. 60% of all adults in the United States report having been ghosted. This behavior elevates anxiety, decreases self-esteem, and causes increased feelings of loneliness. According to the US Surgeon General, the mortality comparison odds of lacking social connection are greater than smoking 15 cigarettes a day.",
-    backgroundImage: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=1920&q=80",
+    backgroundImage: "https://images.unsplash.com/photo-1563182150-7abad4f9d362?q=80&w=2071",
     alignment: "left",
   },
   {
@@ -104,7 +104,7 @@ const navItems = [
   { href: "/stakeholders", label: "Stakeholders" },
   { href: "/video", label: "Video" },
   { href: "/reflection", label: "Reflection" },
-  { href: "/works-cited", label: "Works Cited" },
+  { href: "/references", label: "References" },
 ]
 
 function HamburgerNav() {
@@ -309,23 +309,42 @@ function BackgroundLayer({
     </motion.div>
   )
 }
-
 export function ScrollingArticle() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([])
   const [activeIndex, setActiveIndex] = useState(0)
   const { scrollYProgress } = useScroll({ container: containerRef })
 
+  // Use IntersectionObserver to detect which section is most visible
   useEffect(() => {
-    const unsubscribe = scrollYProgress.on("change", (latest) => {
-      const sectionCount = sections.length
-      const newIndex = Math.min(
-        Math.floor(latest * sectionCount + 0.5),
-        sectionCount - 1
+    const observers: IntersectionObserver[] = []
+    
+    sectionRefs.current.forEach((ref, index) => {
+      if (!ref) return
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // When a section is more than 50% visible, make it active
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+              setActiveIndex(index)
+            }
+          })
+        },
+        {
+          root: containerRef.current,
+          threshold: 0.5,
+        }
       )
-      setActiveIndex(newIndex)
+      
+      observer.observe(ref)
+      observers.push(observer)
     })
-    return () => unsubscribe()
-  }, [scrollYProgress])
+    
+    return () => {
+      observers.forEach((observer) => observer.disconnect())
+    }
+  }, [])
 
   return (
     <main className="relative h-screen overflow-hidden">
@@ -367,9 +386,10 @@ export function ScrollingArticle() {
         className="relative h-screen overflow-y-auto snap-y snap-mandatory scrollbar-hide"
         style={{ scrollBehavior: 'smooth' }}
       >
-        {sections.map((section) => (
+        {sections.map((section, index) => (
           <div 
             key={section.id}
+            ref={(el) => { sectionRefs.current[index] = el }}
             className="h-screen w-full snap-start snap-always"
             aria-label={section.title}
           />

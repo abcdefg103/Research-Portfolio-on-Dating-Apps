@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: 'How should the isolating effects caused by dating apps for its American audience be best reduced? An exploration of loneliness, authenticity, and digital connection.',
   generator: 'v0.app',
   icons: {
-    icon: "public/icon.svg"
+    icon: "/heartsicon.png"
   },
 }
 
