@@ -143,6 +143,10 @@ export default function WorksCitedPage() {
               </div>
 
               <div className="pl-8 -indent-8">
+                Burden, A. (2016, February 26). <i>Opened book</i> [Photograph]. Unsplash. https://unsplash.com/photos/opened-book-QJDzYT_K8Xg
+              </div>
+              
+              <div className="pl-8 -indent-8">
                 Carswell, V. (2018, March 31). <i>Four person holding each others waist at daytime</i> [Photograph]. Unsplash. https://unsplash.com/photos/four-person-holding-each-others-waist-at-daytime-0aMMMUjiiEQ
 
               </div>
@@ -156,13 +160,27 @@ export default function WorksCitedPage() {
               </div>
 
               <div className="pl-8 -indent-8">
+                Ferlic, J. (2016, December 13). <i>Photo of library with turned on lights</i> [Photograph]. Unsplash. https://unsplash.com/photos/photo-of-library-with-turned-on-lights-sfL_QOnmy00
+              </div>
+
+              <div className="pl-8 -indent-8">
+                Ferrara, S. (2017, October 1). <i>Aerial photo of foggy mountains</i> [Photograph]. Unsplash. https://unsplash.com/photos/aerial-photo-of-foggy-mountains-1527pjeb6jg
+              </div>
+
+              <div className="pl-8 -indent-8">
                 Maage, S. (2018, June 18). <i>Photo of three women lifting there hands</i> [Photograph]. Unsplash. https://unsplash.com/photos/photo-of-three-women-lifting-there-hands-tXiMrX3Gc-g
               </div>
 
               <div className="pl-8 -indent-8">
                 Nurrohmad, M. (2016, September 18). <i>Hearth, Liver, Medic royalty-free vector graphic. Free for use & download</i>. [Photograph]. Pixabay. https://pixabay.com/vectors/hearth-liver-medic-hearth-stroke-1674896/
               </div>
-
+              <div className="pl-8 -indent-8">
+                Owens, J. (2017, April 19). <i>Turned on imac and apple magic keyboard and mouse on table</i> [Photograph]. Unsplash. https://unsplash.com/photos/turned-on-imac-and-apple-magic-keyboard-and-mouse-on-table-mQxttWjHFjA
+              </div>
+              <div className="pl-8 -indent-8">
+                Studler, T. (2016, February 8). <i>People walking on grey concrete floor during daytime</i> [Photograph]. Unsplash. https://unsplash.com/photos/people-walking-on-grey-concrete-floor-during-daytime-ABGaVhJxwDQ
+              </div>
+              
               <div className="pl-8 -indent-8">
                 Todoran, B. (2019, July 15). <i>Man stretching his arms silhouette at sunrise</i> [Photograph]. Unsplash. https://unsplash.com/photos/man-stretching-his-arms-silhouette-at-sunrise-xRT85yVC-8k
               </div>

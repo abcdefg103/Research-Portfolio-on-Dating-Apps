@@ -16,7 +16,6 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Sensations of Loneliness | Online Dating Platforms',
   description: 'How should the isolating effects caused by dating apps for its American audience be best reduced? An exploration of loneliness, authenticity, and digital connection.',
-  generator: 'v0.app',
   icons: {
     icon: "/heartsicon.png"
   },

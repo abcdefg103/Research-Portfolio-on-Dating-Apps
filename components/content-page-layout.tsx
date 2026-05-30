@@ -10,7 +10,7 @@ const navItems = [
   { href: "/stakeholders", label: "Stakeholders" },
   { href: "/video", label: "Video" },
   { href: "/reflection", label: "Reflection" },
-  { href: "/works-cited", label: "Works Cited" },
+  { href: "/references", label: "References" },
 ]
 
 interface ContentPageLayoutProps {

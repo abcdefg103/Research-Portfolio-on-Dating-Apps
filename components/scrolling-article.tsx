@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react"
 import { useScroll, useTransform, motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, Menu, X } from "lucide-react"
+import { ChevronDown, ChevronUp, Menu, X, Maximize2 } from "lucide-react"
 
 interface ArticleSection {
   id: string
@@ -26,7 +26,7 @@ const sections: ArticleSection[] = [
     id: "introduction",
     title: "A Digital Paradox",
     subtitle: "Introduction",
-    content: "Dating apps have skyrocketed in use over the past decade, with the United States user base reaching 60.5 million in 2024. While 30% of all adults report having used dating apps, these platforms remain riddled with negative effects — the most prominent being the loneliness arising from overuse. Online connections lack authenticity at their foundational basis, hindering \"real\" connections from occurring between individuals.",
+    content: "Dating apps have skyrocketed in use over the past decade. In the United States alone, 30% of all adults report having used dating apps. However, these platforms are riddled with negative effects, the most prominent being the loneliness arising from overuse. This is primarily as online connections lack authenticity at their foundational basis, hindering \"real\" connections from occurring between individuals and inducing more feelings of loneliness.",
     backgroundImage: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80",
     alignment: "left",
   },
@@ -34,7 +34,7 @@ const sections: ArticleSection[] = [
     id: "appeal",
     title: "The Appeal of Dating Apps",
     subtitle: "Why We Swipe",
-    content: "Many individuals continue to use dating apps as a result of perceived positive effects. More than 50% of users reported that dating apps had a net positive effect on their self-esteem. When we \"swipe\" through profiles and find a \"match,\" our brains perceive this as a reward, triggering dopamine bursts and elevating feelings of enjoyment. Yet many authors argue that dating apps damage self-esteem through constant comparison, pressure for perfection, and internalized rejection.",
+    content: "Most people continue to use dating apps due to the increased perceived feelings of self-esteem they feel. In 2024, more than 50% of users reported that dating apps had a net positive effect on their self-esteem. When users \"swipe\" through profiles and find a \"match,\" they perceive this feelings as a reward and receive external validation, triggering elevated feelings of enjoyment.",
     backgroundImage: "https://images.unsplash.com/photo-1522543558187-768b6df7c25c?w=1920&q=80",
     alignment: "right",
   },
@@ -42,7 +42,7 @@ const sections: ArticleSection[] = [
     id: "authenticity",
     title: "The Crisis of Authenticity",
     subtitle: "Causes of Loneliness",
-    content: "Dating app users, in an attempt to receive validation, present an altered version of themselves — posting photos that highlight positive traits they might not necessarily possess. This behavior comes at the cost of authenticity. The majority of online communications serve as \"performative relationships\" rather than \"meaningful, human connections.\" Our fears of being criticized create a sense of disconnection, constantly fueling the pressure to solely post positive attributes of our lives.",
+    content: "Many dating app users post altered photos of themselves that only highlight positive traits of themselves, which comes at the cost of decreased authenticity between users. The majority of online communications serve as performative relationships rather than meaningful, human connections. Our fears of being criticized create a sense of disconnection which constantly fuels the pressure to solely post positive attributes of our lives, creating a positive feedback loop.",
     backgroundImage: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=1920&q=80",
     alignment: "center",
   },
@@ -50,7 +50,7 @@ const sections: ArticleSection[] = [
     id: "ghosting",
     title: "The Silent Epidemic",
     subtitle: "Ghosting & Its Effects",
-    content: "When individuals feel that a dating profile is not authentic, they lose trust, making a relationship less likely to succeed. This often leads to ghosting — suddenly cutting off communications without explanation. 60% of all adults in the United States report having been ghosted. This behavior elevates anxiety, decreases self-esteem, and causes increased feelings of loneliness. According to the US Surgeon General, the mortality comparison odds of lacking social connection are greater than smoking 15 cigarettes a day.",
+    content: "When individuals feel that a dating profile is not authentic, they lose trust, making a relationship less likely to succeed. This often leads to ghosting, a behavior where one individual suddenly cuts off communications without explanation. 60% of all adults in the United States report having been ghosted. This behavior elevates anxiety, decreases self-esteem, and is the central cause to increased feelings of loneliness. ",
     backgroundImage: "https://images.unsplash.com/photo-1563182150-7abad4f9d362?q=80&w=2071",
     alignment: "left",
   },
@@ -58,7 +58,7 @@ const sections: ArticleSection[] = [
     id: "corporations",
     title: "Profit Over Connection",
     subtitle: "Corporate Strategies",
-    content: "Most dating platforms are designed to maximize revenue by increasing user retention. Many dating apps liken themselves to gambling products, constantly exposing users to paid features that lock them into using these apps. Longer usage is directly correlated with higher levels of depression and anxiety. Dating companies do not want users to enter committed relationships, as this causes adults to stop using these apps. As a result, companies have no incentives to increase authenticity.",
+    content: "Most dating platforms are designed to maximize revenue by increasing user retention. Many dating apps liken themselves to gambling products, constantly exposing users to paid features that lock them into using these apps. Longer usage is directly correlated with higher levels of depression and anxiety. Dating companies do not want users to enter committed relationships, as this causes adults to stop using these apps. As a result, companies have no incentives to increase authenticity and fix this problem.",
     backgroundImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1920&q=80",
     alignment: "right",
   },
@@ -66,7 +66,7 @@ const sections: ArticleSection[] = [
     id: "solutions",
     title: "Offline Elements Online",
     subtitle: "A Path Forward",
-    content: "In-person interactions can help alleviate feelings of loneliness. By incorporating elements of offline relationships into online platforms, we can prevent the rise in loneliness. Setting daily limits on profiles viewed would reduce choice overload and ghosting behavior. Preventing users from seeing profile pictures until after meaningful conversation would increase the significance of personality over superficial characteristics. Apps like CoffeeMeetsBagel and S'more have pioneered these approaches.",
+    content: "In-person interactions can help alleviate feelings of loneliness. Thus, by incorporating elements of offline relationships into online platforms, we can prevent the rise in loneliness. Setting daily limits on profiles viewed would reduce choice overload and ghosting behavior. Preventing users from seeing profile pictures until after meaningful conversation would increase the significance of personality over superficial characteristics. Apps like CoffeeMeetsBagel and S'more have pioneered these approaches. In addition, in order to force corporations into adapting these values, we must require them to do so by manner of legal implications.",
     backgroundImage: "https://images.unsplash.com/photo-1543807535-eceef0bc6599?w=1920&q=80",
     alignment: "center",
   },
@@ -74,9 +74,17 @@ const sections: ArticleSection[] = [
     id: "conclusion",
     title: "Finding Real Connection",
     subtitle: "Conclusion",
-    content: "Dating apps have increasingly grown into one of the principal methods to meet new people and enter relationships. However, this has created increased feelings of loneliness, primarily due to the lack of authenticity in relationships generated by these platforms. To avoid these feelings, we must add components of offline dating into the online sphere through legal mandates. By adopting these principles, we can begin to move on from the heavy feelings of loneliness that dating apps afflict onto their users.",
+    content: "Overall, dating apps have increasingly grown into one of the most popular methods to enter relationships. However, this has created increased feelings of loneliness, primarily due to aformentioned issues with authenticity between users on these platforms. To avoid these feelings, we must force corporations to incorporate elements of in-person interactions onto dating apps through legal remedies. By adopting these principles, we can begin to move on from the heavy feelings of loneliness that dating apps afflict onto their users.",
     backgroundImage: "https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=1920&q=80",
     alignment: "left",
+  },
+  {
+    id: "full-paper",
+    title: "Read the Full Paper",
+    subtitle: "Complete Research",
+    content: "",
+    backgroundImage: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1920&q=80",
+    alignment: "center",
   },
 ]
 
@@ -209,6 +217,8 @@ function SectionContent({ section, index, isActive, isPrev, isNext }: SectionCon
   }
 
   const isHero = index === 0
+  const isFullPaper = section.id === "full-paper"
+
 
   return (
     <motion.div
@@ -224,7 +234,7 @@ function SectionContent({ section, index, isActive, isPrev, isNext }: SectionCon
         ease: [0.22, 1, 0.36, 1],
       }}
     >
-      <div className="max-w-4xl">
+      <div className={isFullPaper ? "w-full max-w-5xl px-4" : "max-w-4xl"}>
         {section.subtitle && (
           <motion.span 
             className="text-primary text-sm uppercase tracking-[0.3em] mb-4 font-sans block"
@@ -258,6 +268,38 @@ function SectionContent({ section, index, isActive, isPrev, isNext }: SectionCon
           >
             {section.content}
           </motion.p>
+        )}
+        {isFullPaper && (
+          <motion.div
+            className="pointer-events-auto mt-6 w-full"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 30 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+            {/* PDF Header */}
+            <div className="flex items-center justify-between mb-3 px-1">
+              <span className="text-sm text-muted-foreground font-sans">
+                Research Paper Preview
+              </span>
+              <a
+                href="/paper.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-sans text-foreground bg-card/80 hover:bg-card border border-border rounded-lg transition-colors"
+              >
+                <Maximize2 className="h-4 w-4" />
+                Open Full Screen
+              </a>
+            </div>
+            {/* PDF Embed */}
+            <div className="relative w-full h-[55vh] rounded-lg overflow-hidden border border-border bg-card/50 backdrop-blur-sm">
+              <iframe
+                src="/paper.pdf"
+                className="w-full h-full"
+                title="Full Research Paper"
+              />
+            </div>
+          </motion.div>
         )}
 
         {isHero && isActive && <ScrollIndicator />}
@@ -346,6 +388,25 @@ export function ScrollingArticle() {
     }
   }, [])
 
+  const goToSection = (index: number) => {
+    const container = containerRef.current
+    if (container) {
+      const targetScroll = index * container.clientHeight
+      container.scrollTo({ top: targetScroll, behavior: 'smooth' })
+    }
+  }
+
+  const goToPrev = () => {
+    if (activeIndex > 0) {
+      goToSection(activeIndex - 1)
+    }
+  }
+
+  const goToNext = () => {
+    if (activeIndex < sections.length - 1) {
+      goToSection(activeIndex + 1)
+    }
+  }
   return (
     <main className="relative h-screen overflow-hidden">
       {/* Hamburger Navigation */}
@@ -379,7 +440,7 @@ export function ScrollingArticle() {
           />
         ))}
       </div>
-
+      
       {/* Scroll Container with Snap */}
       <div 
         ref={containerRef}
@@ -415,6 +476,32 @@ export function ScrollingArticle() {
             aria-label={`Go to ${section.title}`}
           />
         ))}
+      </div>
+      <div className="fixed bottom-6 left-6 z-20 flex flex-col gap-2">
+        <button
+          onClick={goToPrev}
+          disabled={activeIndex === 0}
+          className={`w-12 h-12 flex items-center justify-center rounded-full border transition-all duration-300 ${
+            activeIndex === 0
+              ? "bg-card/30 border-border/30 text-foreground/30 cursor-not-allowed"
+              : "bg-card/80 backdrop-blur-sm border-border text-foreground hover:bg-card hover:border-primary"
+          }`}
+          aria-label="Previous section"
+        >
+          <ChevronUp className="h-5 w-5" />
+        </button>
+        <button
+          onClick={goToNext}
+          disabled={activeIndex === sections.length - 1}
+          className={`w-12 h-12 flex items-center justify-center rounded-full border transition-all duration-300 ${
+            activeIndex === sections.length - 1
+              ? "bg-card/30 border-border/30 text-foreground/30 cursor-not-allowed"
+              : "bg-card/80 backdrop-blur-sm border-border text-foreground hover:bg-card hover:border-primary"
+          }`}
+          aria-label="Next section"
+        >
+          <ChevronDown className="h-5 w-5" />
+        </button>
       </div>
     </main>
   )
